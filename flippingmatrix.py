@@ -15,24 +15,14 @@ matrix = np.array([    [16, 18, 15, 11, 15, 17, 15,  7,  7, 12, 12,  2],
 n = len(matrix) // 2  #len of matrix
 maxSum = 0
 if n == 1:
-    maxSum = matrix[0,0]   
-for j in range(len(matrix[0])): # trough each column
-    for i in range(n):  # looking for the max in the nxn
-        if matrix[i][j] < matrix[-i-1][j]:
-            matrix[i][j], matrix[-i-1][j] = matrix[-i-1][j], matrix[i][j]
-
-# Order rows
-for i in range(len(matrix)):  # for each row
-    for j in range(n):  # for each mirror row
-        if matrix[i][j] < matrix[i][-j-1]:
-            # change only if the element coul'd be in submatrix
-            matrix[i][j], matrix[i][-j-1] = matrix[i][-j-1], matrix[i][j]
-
+    maxSum = matrix[0,0]
+# First Step: Finding the max in columns
+matrixT = np.transpose(matrix)
+for i in range(len(matrix)):
+    if np.max(matrixT) == matrixT[-n:]
+print(matrixT)
 # sum NxN 
-maxSum = 0
-for i in range(n):
-    for j in range(n):
-        maxSum += matrix[i][j]
-
-matrixN = matrix[0:n,0:n]
-print (matrixN)
+'''maxSum = 0
+print (matrix)
+matrixN =matrix[0:n,0:n]
+maxSum = np.max(matrixN)'''
