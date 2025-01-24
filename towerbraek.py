@@ -11,25 +11,10 @@ Given the values of n and m, determine which player will win.
  If the first player wins, return . Otherwise, return .'''
 n =374625                # towers
 m = 796723 # height of towers
-choice = 0 
-round = 1
-# First m divisors numbers
-multiples = [i for i in range(1,m) if m%i == 0]
-while len(multiples)>1:
-    multiples = [i for i in range(1,m) if m%i == 0]
-    #The best choice
-    choice = max(multiples)
-    m = m - choice
-    round += 1
-print(n)
-print(round)
-#Always players do the best choice, so repeat for n times.
-round =round * n
-print(round)
-if round%2 ==0:
+
+if m == 1:
+    print(2)
+if n%2 == 0:
     print(2)
 else:
-    print(1)
-
-
-
+    print (1)
